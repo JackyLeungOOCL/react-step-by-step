@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NumberTxt from './NumberTxt';
 
 class App extends Component {
   state = {number : this.props.number};
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <button onClick={this.alertButtonClick}>Hello World!</button>
-        <span>number: {this.state.number}</span>
+        <span><NumberTxt /> {this.state.number}</span>
       </div>
     );
   }
