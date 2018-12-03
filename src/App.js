@@ -3,18 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  state = {number : 1};
+  state = {number : this.props.number};
 
   alertButtonClick = () => {
-    alert("now you know how to handle onclick event");
-    this.setState({number : 1});
+    // alert("now you know how to handle onclick event");
+    let newNumber = this.props.onClickAddTwo(this.state.number);
+    this.setState({number : newNumber});
   };
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.props.number}>Hello World!</button>
-        <span>number: {this.props.number}</span>
+        <button onClick={this.alertButtonClick}>Hello World!</button>
+        <span>number: {this.state.number}</span>
       </div>
     );
   }
