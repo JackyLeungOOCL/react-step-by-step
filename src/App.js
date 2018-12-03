@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  state = {number : 0};
+  state = {number : 1};
 
   alertButtonClick = () => {
     alert("now you know how to handle onclick event");
@@ -13,22 +13,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
-        <button onClick={this.alertButtonClick}>Hello World!</button>
-        <span>number: {this.state.number}</span>
+        <button onClick={this.props.number}>Hello World!</button>
+        <span>number: {this.props.number}</span>
       </div>
     );
   }
